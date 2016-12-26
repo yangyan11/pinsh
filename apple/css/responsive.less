@@ -1,0 +1,70 @@
+@cols:12;
+@minScreen:770px;
+@maxScreen:1070px;
+.container{
+  width: @minScreen;
+  margin:auto;
+  .clear;
+  .row{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    .clear;
+  }
+  &-fluid{
+    width: 100%;
+    margin: auto;
+    .clear;
+    .row{
+      width: 100%;
+      margin: auto;
+      .clear;
+    }
+  }
+}
+.loop();
+@media screen and (min-width:@minScreen){
+  .container{
+    width: @minScreen;
+    margin:auto;
+    .col-m-hide{
+      display: none;
+    }
+  }
+  .loop(m);
+}
+@media screen and (min-width:@maxScreen){
+  .container{
+    width: @maxScreen;
+    margin:auto;
+    .col-m-hide{
+      display: block;
+    }
+  }
+  .loop(l);
+}
+//循环
+.loop(@type:s,@i:1) when (@i<=@cols){
+  .container>.row>.col-@{type}-@{i}{
+    width: @i/@cols*100%;
+    float: left;
+  }
+  .container-fluid>.row>.col-@{type}-@{i}{
+    width: @i/@cols*100%;
+    float: left;
+  }
+  .loop(@type,@i+1);
+}
+
+//清除浮动
+.clear{
+  &:before,&:after{
+    content: '';
+    display: block;
+  }
+  &:after{
+    clear: both;
+  }
+}
+

@@ -1,0 +1,571 @@
+html,body{
+    width: 100%;height: 100%;
+    padding: 0;margin: 0;overflow: hidden;
+    font-family:"微软雅黑";
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+/* 头部*/
+header{
+    width: 100%;height: 60px;
+    background: #168bd8;
+    position: fixed;left: 0;
+    top:0;z-index: 9999;
+}
+.header{
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.header a{
+    float: left;color: #fff;
+}
+.logo{
+    width: 120px;height: 40px;margin-top: 10px;
+    background: url(../img/tp.png) no-repeat 0 0;
+    margin-left: 10px;
+}
+.header .index{
+    align-self: flex-end;
+}
+
+
+.header .ban{
+    align-self: flex-end;
+    font-size: 12px;
+}
+/*弹性布局 flex  弹性盒模型
+   1. 盒子 容器
+     属性：
+
+
+   2。列表 项目
+     属性
+
+*/
+
+.max{
+    display: none;
+}
+.min{
+    position: relative;
+}
+.min .menu-option{
+    width: 30px;height: 40px;
+    position: absolute;
+    margin-top: 15px;margin-right: 10px;
+    right: 10px;bottom: 6px;
+}
+.min .menu-option .menu-option-tline{
+   width:100%;height: 2px;
+    position: absolute;
+    top:10px;left: 0;background: #fff;
+    transition:transform 0.5s ease;
+}
+.min .menu-option .menu-option-bline{
+     width:100%;height: 2px;
+     position: absolute;
+     top:25px;left: 0;background: #fff;
+     transition:transform 0.5s ease;
+ }
+.min .scene{
+    position: absolute;
+    top:60px; left: 0;
+    width: 100%;height: 40px;
+    perspective: 500px;
+}
+.min .menu{
+    position: absolute;
+    top:0;left: 0;
+    width: 100%;height:100%;
+    transform-style: preserve-3d;
+    transform-origin:top ;
+}
+.min .menu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    opacity: 0;
+}
+@keyframes menu {
+    0%{
+        opacity: 0;transform: rotateX(90deg);
+    }
+    100%{
+        opacity: 1;transform: rotateX(0deg);
+    }
+}
+@keyframes menu1 {
+    0%{
+        opacity: 1;transform: rotateX(0deg);
+    }
+    100%{
+        opacity: 0;transform: rotateX(90deg);
+    }
+}
+/*头部结束*/
+
+@media screen and (min-width: 1000px) {
+    .max{
+        display: flex;
+    }
+    .min{
+        display: none;
+    }
+    .header a:nth-of-type(4){
+        margin-left: 200px;
+    }
+    .header .ban{
+        align-self: flex-end;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+    .header .index{
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+    }
+
+}
+
+
+
+
+.fullpage{
+    width: 100%;height: 100%;
+    transition: margin 2s ease;
+}
+section{
+    width: 100%;height: 100%;
+}
+section:nth-child(1){
+    background:#3fb0ee url(../img/bg0.jpg);
+}
+section:nth-child(2){
+    background:#0d71cd url(../img/bg1.jpg);
+}
+section:nth-child(3){
+    background:#49c179 url(../img/bg2.jpg);
+}
+section:nth-child(4){
+    background:#009a70 url(../img/bg3.jpg);
+}
+/*第一屏*/
+.section{
+   position: relative;box-sizing: border-box;
+}
+.section_1{
+    height: 661px;  background-color: rgb(63, 176, 238);
+}
+.fpCell{
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.section .top{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.section .bg_cloud{
+    animation: cloudmove 100s linear infinite;
+}
+.bg_cloud{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background: url(../img/cloud1.png) repeat;
+}
+@keyframes cloudmove {
+    0%{
+        background-position: 2000px 0;
+    }
+    50%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: -2000px 0;
+    }
+}
+.section .middle{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+}
+.section .bg_cloud1{
+    animation: cloudmove 280s linear infinite;
+}
+.bg_cloud1{
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: url(../img/cloud2.png) repeat;
+}
+.section .bottom {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+.section .bg_cloud2{
+    animation: cloudmove 600s linear infinite;
+}
+.bg_cloud2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: url(../img/cloud2.png) repeat;
+}
+.section1_foot{
+    height: 126px;
+    background: #0d71cd url(../img/bg0.jpg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.section .section1_foot{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+}
+.center{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.section1_foot .center .hill{
+    position: absolute;
+    transition: all 0.5s ease-out 0.3s;
+}
+.section1_foot .center .hill_2{
+    width: 63px;
+    height: 78px;
+    background: url(../img/hill2.png);
+    right: 288px;
+    top: -13px;
+}
+.section1_foot .center .hill_3{
+    width: 260px;
+    height: 175px;
+    background: url(../img/hill3.png);
+    right: -129px;
+    top: -47px;
+}
+.section1_foot .center .hill_1{
+    width: 265px;
+    height: 175px;
+    background: url(../img/hill1.png);
+    left: -182px;
+    top: -50px;
+}
+.section1_foot .center .hill_ship{
+    width: 242px;
+    height: 228px;
+    background: url(../img/ship1.png);
+    left: 126px;
+    top: -191px;
+}
+.center .center_word{
+    width: 501px;
+    height: 158px;
+    background: url(../img/launch.png);
+    left: 0;
+    top: 125px;
+}
+.fpCell .center .hill{
+    position: absolute;
+    transition: all 0.5s ease-out 0.3s;
+}
+.center .center_flight{
+    animation: flight 3s ease-in-out infinite;
+}
+.center_flight{
+    width: 119px;
+    height: 78px;
+    background: url(../img/flight.png);
+    left: 295px;
+    top: -236px;
+}
+@keyframes flight {
+    0%{
+        top:125px;
+    }
+    50%{
+        top:135px;
+    }
+    100%{
+        top:125px;
+    }
+}
+.arrowGo{
+    bottom: 42px;
+    animation: arrow 1s infinite steps(10,end);
+}
+.btn-arrow {
+    display: block;
+    width: 30px;
+    height: 26px;
+    background: url(../img/arrow.png);
+    position: absolute;
+    left: 485px;
+    bottom: 42px;
+}
+a {
+    color: #a6b6c6;
+    text-decoration: none;
+}
+@keyframes arrow {
+    0% {
+        opacity: 1;
+        transform-origin: center center;
+        transform: translate(-50%,0);
+        bottom: 42px;
+    }
+
+    50% {
+        opacity: .5;
+        transform-origin: center center;
+        transform: translate(-50%,0);
+        bottom: 36px;
+    }
+    100% {
+        opacity: 1;
+        transform-origin: center center;
+        transform: translate(-50%,0);
+        bottom: 42px;
+    }
+}
+
+/*第二屏*/
+.section_2{
+    height: 662px;
+    /*background-color: rgb(13, 113, 205);*/
+}
+.title_word{
+    opacity: 1;
+    position: absolute;
+    transition: all .5s ease-out .3s;
+}
+.title_word_1{
+    top: 220px;
+    left: 20px;
+}
+.section .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: '微软雅黑';
+    color: #fff;
+    width: 500px;
+}
+.section_2 .title h3{
+    background: url(../img/h_lingxian.png) no-repeat;
+}
+.section .title h3 {
+    width: 66px;
+    height: 126px;
+    text-indent: -9999em;
+    float: left;
+}
+.lx{
+    animation: lxs 2s infinite;
+    transform-style: preserve-3d;
+}
+@keyframes lxs {
+    0% {
+        transform: rotateY(0deg);
+    }
+    40% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+.section .title .text {
+    margin-left: 86px;
+    margin-top: 8px;
+}
+.section .title .text h4 {
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 48px;
+    margin-bottom: 6px;
+    /*background: #668AB0;*/
+    /*color: #323232;*/
+    width: 267px;
+}
+.section .title .text p {
+    font-size: 19px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    opacity: .8;
+}
+.center .hill_brain {
+    width: 444px;
+    height: 427px;
+    background: url(../img/brain.png);
+   left: 500px;
+    top: -90px;
+}
+.section .sec2_foot {
+    position: absolute;
+    display: block;
+    width: 88px;
+    height: 88px;
+}
+.section_2 .sec2_foot_1 {
+    background: #35b568;
+    left: 70px;
+    width: 44px;
+    height: 44px;
+    top:-44px;
+}
+.section_2 .sec2_foot_2{
+    background: #4ac179;
+    left: 158px;
+    top:-88px;
+
+}
+.section_2 .sec2_foot_3{
+    background: #8ae75a;
+    left: 246px;
+    width: 44px;
+    height: 44px;
+    top:-44px;
+}
+.section_2 .sec2_foot_4{
+    background: #8ae75a;
+    right: 328px;
+    width: 44px;
+    height: 44px;
+    top:-44px;
+}
+.section_2 .sec2_foot_5{
+    background: #4ac179;
+    right: 240px;
+    width: 44px;
+    height: 44px;
+    top:-44px;
+}
+/*第三屏幕*/
+.section_3{
+    position: relative;
+    height: 662px;
+}
+.section_3 .sec2_foot_1{
+    background: #33bb9a;
+    left: 70px;
+    top: 60px;
+}
+.section_3 .sec2_foot_2{
+    background: #29a2b8;
+    left: -18px;
+    top: 148px;
+}
+.section_3 .sec2_foot_3{
+    background: #60cf6e;
+    left: 158px;
+    top: 148px;
+}
+.section_3 .sec2_foot_4{
+    background: #8ae75a;
+    left: 70px;
+    top: 236px;
+    width: 176px;
+    height: 176px;
+    background-image: url(../img/square.jpg);
+
+}
+.section_3 .sec2_foot_5{
+    background: #33bb9a;
+    left: 246px;
+    top: 236px;
+}
+.section_3 .section3_foot{
+    height: 138px;
+    background: transparent url(../img/bg-3.png) no-repeat;
+    position: absolute;
+    top:523px;
+    left: 0;
+    width: 100%;
+
+}
+.section_3 .title h3 {
+    background: url(../img/h_quanmian.png) no-repeat;
+}
+.center .hill_yuqing {
+    width: 444px;
+    height: 427px;
+    background: url(../img/allside.png) no-repeat;
+    left: 500px;
+    top: -90px;
+
+}
+/*第四屏*/
+.section_4{
+    height: 662px;
+    position: relative;
+}
+.copyright {
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-family: 'Microsoft Yahei';
+}
+.section .section4_foot{
+    height: 95px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.copyright a {
+    color: #fff;
+    text-decoration: none;
+}
+.section_4 .title h3 {
+    background: url(../img/h_zhuanye.png) no-repeat;
+}
+.center .hill_stat {
+    width: 603px;
+    height: 361px;
+    background: url(../img/stat.png);
+    right: 100px;
+    top: 155px;
+    /*opacity: 0;*/
+}
+.center .hill_bubble {
+    left: -36px;
+    top: -56px;
+    width: 275px;
+    height: 245px;
+    background: url(../img/bubble.png);
+}
+
+
